@@ -1,7 +1,12 @@
 import axios from "axios";
 
+// Dynamically set the base URL based on the environment
+//
+
+const BASE_URL = import.meta.env.MODE ==="development" ? "http://localhost:5001/api" : "/api";
+
 const api = axios.create({
-    baseURL: "http://localhost:5001/api", // Base URL for your API requests
+    baseURL: BASE_URL, // Base URL for your API requests
     
 });
 
